@@ -1,79 +1,110 @@
 :root {
-  --azul: #2563eb;
-  --azul-escuro: #1e3a8a;
-  --verde: #16a34a;
-  --vermelho: #dc2626;
-  --cinza: #f3f4f6;
+  --fundo: #f9fafb;
+  --texto: #111827;
+  --card: #ffffff;
+  --primaria: #2563eb;
+  --ligar: #16a34a;
+  --desligar: #dc2626;
+}
+
+.dark {
+  --fundo: #0f172a;
+  --texto: #f9fafb;
+  --card: #1e293b;
+  --primaria: #3b82f6;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--cinza);
+  background-color: var(--fundo);
+  color: var(--texto);
   margin: 0;
   padding: 0;
-  text-align: center;
-  color: #333;
+  transition: all 0.3s ease-in-out;
 }
 
 header {
-  background: linear-gradient(90deg, var(--azul), var(--azul-escuro));
+  background: var(--primaria);
   color: white;
-  padding: 30px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: relative;
 }
 
-h1 {
-  margin-bottom: 5px;
+#modoBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: white;
+  color: var(--primaria);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.dashboard {
   padding: 40px;
-  gap: 20px;
+  text-align: center;
+}
+
+.salas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
 
 .card {
-  background: white;
-  border-radius: 15px;
+  background: var(--card);
+  width: 260px;
+  border-radius: 16px;
   padding: 25px;
-  width: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: translateY(-6px);
 }
 
-.buttons button {
-  border: none;
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.estado {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn {
   padding: 10px 20px;
-  border-radius: 10px;
+  border: none;
+  color: white;
+  border-radius: 8px;
   margin: 5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 600;
 }
 
-.buttons button:first-child {
-  background-color: var(--verde);
-  color: white;
+.ligar {
+  background-color: var(--ligar);
 }
 
-.buttons button:last-child {
-  background-color: var(--vermelho);
-  color: white;
+.desligar {
+  background-color: var(--desligar);
 }
 
-.buttons button:hover {
-  opacity: 0.8;
+.grafico {
+  padding: 30px;
+  margin-top: 20px;
 }
 
 footer {
-  background-color: #111827;
+  background-color: var(--primaria);
   color: white;
+  text-align: center;
   padding: 15px;
-  font-size: 14px;
 }
