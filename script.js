@@ -1,110 +1,75 @@
-:root {
-  --fundo: #f9fafb;
-  --texto: #111827;
-  --card: #ffffff;
-  --primaria: #2563eb;
-  --ligar: #16a34a;
-  --desligar: #dc2626;
+const salas = [
+  { id: 101, nome: "Sala 101", estado: "Desligada " },
+  { id: 102, nome: "Sala 102", estado: "Acesa " },
+  { id: 103, nome: "Sala 103", estado: "Desligada " },
+  { id: 104, nome: "Sala 104", estado: "Acesa " },
+];
+
+const container = document.getElementById("salasContainer");
+
+function renderizarSalas() {
+  container.innerHTML = "";
+  salas.forEach((sala) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <h3>${sala.nome}</h3>
+      <p class="estado">${sala.estado}</p>
+      <button class="btn ligar" onclick="ligar(${sala.id})">Ligar</button>
+      <button class="btn desligar" onclick="desligar(${sala.id})">Desligar</button>
+    `;
+    container.appendChild(card);
+  });
 }
 
-.dark {
-  --fundo: #0f172a;
-  --texto: #f9fafb;
-  --card: #1e293b;
-  --primaria: #3b82f6;
+function ligar(id) {
+  const sala = salas.find((s) => s.id === id);
+  sala.estado = "Acesa ";
+  renderizarSalas();
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--fundo);
-  color: var(--texto);
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease-in-out;
+function desligar(id) {
+  const sala = salas.find((s) => s.id === id);
+  sala.estado = "Desligada ";
+  renderizarSalas();
 }
 
-header {
-  background: var(--primaria);
-  color: white;
-  text-align: center;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  position: relative;
-}
+// Modo escuro
+const modoBtn = document.getElementById("modoBtn");
+modoBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  modoBtn.textContent = document.body.classList.contains("dark")
+    ? " Modo Claro"
+    : " Modo Escuro";
+});
 
-#modoBtn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: white;
-  color: var(--primaria);
-  border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
+// Gráfico de energia
+const ctx = document.getElementById("graficoEnergia").getContext("2d");
+new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: ["Seg", "Ter", "Qua", "Qui", "Sex"],
+    datasets: [
+      {
+        label: "Consumo (kWh)",
+        data: [12, 19, 8, 15, 10],
+        borderColor: "#2563eb",
+        backgroundColor: "rgba(37, 99, 235, 0.2)",
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: true },
+    },
+    scales: {
+      y: { beginAtZero: true },
+    },
+  },
+});
 
-.dashboard {
-  padding: 40px;
-  text-align: center;
-}
-
-.salas-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.card {
-  background: var(--card);
-  width: 260px;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.estado {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.btn {
-  padding: 10px 20px;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  margin: 5px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.ligar {
-  background-color: var(--ligar);
-}
-
-.desligar {
-  background-color: var(--desligar);
-}
-
-.grafico {
-  padding: 30px;
-  margin-top: 20px;
-}
-
-footer {
-  background-color: var(--primaria);
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
+renderizarSalas();
