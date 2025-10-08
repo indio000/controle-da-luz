@@ -1,20 +1,28 @@
-Sistema de Controle de Iluminação para Salas de Aula
+ Sistema Inteligente de Iluminação Escolar
 
-Projeto desenvolvido como integração entre Front-End, Mobile, Banco de Dados e Automação com Arduino.
+Projeto desenvolvido para controle remoto e monitoramento de luzes em salas de aula.
 
- Tecnologias
+ Tecnologias Utilizadas
 - HTML5
 - CSS3
 - JavaScript
-- Arduino (simulação futura com ESP8266)
 
 Objetivo
-Controlar remotamente o acionamento de luzes em salas de aula, economizando energia e integrando software e hardware.
+Controlar e monitorar remotamente as luzes de diferentes salas, simulando um sistema conectado ao Arduino e banco de dados.
 
-Como executar
-1. Baixe os arquivos.
-2. Abra o `index.html` no navegador.
-3. Clique em **Ligar** ou **Desligar** para testar.
+Conceito
+O sistema visa reduzir o desperdício de energia elétrica e demonstrar a integração entre software e automação.
 
- Desenvolvido por
+Funcionalidades
+- Interface responsiva e moderna
+- Controle individual de cada sala
+- Indicação visual do estado das luzes
+- Simulação de integração com Arduino
+
+Execução
+1. Baixe o projeto
+2. Abra o arquivo `index.html` no navegador
+3. Clique em **Ligar** ou **Desligar** para testar o sistema
+
+ Autor
 [Gilberto Guimara] — Técnico em Desenvolvimento de Sistemas, 2025.
