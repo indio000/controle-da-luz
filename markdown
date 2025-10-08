@@ -1,28 +1,22 @@
  Sistema Inteligente de Iluminação Escolar
 
-Projeto desenvolvido para controle remoto e monitoramento de luzes em salas de aula.
+Projeto avançado com dashboard interativo, gráfico de consumo e modo escuro, integrando conceitos de Front-End, Banco de Dados e Automação com Arduino.
 
- Tecnologias Utilizadas
+ Conceito
+Sistema que permite monitorar e controlar remotamente a iluminação de várias salas, com interface moderna e intuitiva.
+
+Tecnologias
 - HTML5
-- CSS3
-- JavaScript
+- CSS3 (modo escuro + responsividade)
+- JavaScript (DOM, eventos e Chart.js)
+- Arduino (futura integração via ESP8266)
 
-Objetivo
-Controlar e monitorar remotamente as luzes de diferentes salas, simulando um sistema conectado ao Arduino e banco de dados.
+ Funcionalidades 
+ Painel com múltiplas salas  
+ Botões de ligar/desligar com feedback visual  
+ Gráfico de consumo de energia  
+ Alternância de modo escuro/claro  
+ Layout responsivo para desktop e mobile  
 
-Conceito
-O sistema visa reduzir o desperdício de energia elétrica e demonstrar a integração entre software e automação.
 
-Funcionalidades
-- Interface responsiva e moderna
-- Controle individual de cada sala
-- Indicação visual do estado das luzes
-- Simulação de integração com Arduino
-
-Execução
-1. Baixe o projeto
-2. Abra o arquivo `index.html` no navegador
-3. Clique em **Ligar** ou **Desligar** para testar o sistema
-
- Autor
-[Gilberto Guimara] — Técnico em Desenvolvimento de Sistemas, 2025.
+[Seu Nome] — Técnico em Desenvolvimento de Sistemas, 2025.
