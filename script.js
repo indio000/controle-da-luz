@@ -1,9 +1,11 @@
-document.getElementById("ligar").addEventListener("click", () => {
-  document.getElementById("estado").innerText = "Acesa 💡";
-  document.getElementById("estado").style.color = "green";
-});
+function ligar(sala) {
+  const estado = document.getElementById(`estado${sala}`);
+  estado.innerText = "Acesa ";
+  estado.style.color = "green";
+}
 
-document.getElementById("desligar").addEventListener("click", () => {
-  document.getElementById("estado").innerText = "Desligada ⚫";
-  document.getElementById("estado").style.color = "red";
-});
+function desligar(sala) {
+  const estado = document.getElementById(`estado${sala}`);
+  estado.innerText = "Desligada ⚫";
+  estado.style.color = "red";
+}
