@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Controle de Iluminação - Escola</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Inteligente de Iluminação Escolar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1> Sistema de Controle de Iluminação</h1>
-    <p>Monitoramento das salas de aula</p>
+    <h1>💡 Controle Inteligente de Iluminação</h1>
+    <p>Monitoramento em tempo real das salas de aula</p>
   </header>
 
   <main>
-    <section class="sala">
-      <h2>Sala 101</h2>
-      <p>Estado da luz: <span id="estado">Desligada</span></p>
-      <button id="ligar">Ligar</button>
-      <button id="desligar">Desligar</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>Desenvolvido por [Seu Nome] — 2025</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <div class="dashboard">
+      <div class="card">
+        <h2>Sala 101</h2>
+        <p>Estado: <span id="estado101">Desligada ⚫</span></p>
+        <div class="buttons">
+          <button onclick="ligar('101')">Ligar</
