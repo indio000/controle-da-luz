@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #2b6cb0;
+  color: white;
+  padding: 20px;
+}
+
+main {
+  margin-top: 40px;
+}
+
+.sala {
+  background: white;
+  padding: 20px;
+  margin: 0 auto;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #2b6cb0;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #2c5282;
+}
